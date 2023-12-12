@@ -17,3 +17,13 @@ $ source venv/bin/activate
 ``` shell
 $ deactivate
 ```
+
+#### 5. 存储依赖环境
+``` shell
+pip freeze > requirements.txt
+```
+
+#### 5. 安装依赖环境
+``` shell
+pip install -r requirements.txt
+```
