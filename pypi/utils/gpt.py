@@ -30,7 +30,7 @@ class Message:
 
 
 class MessageResult:
-  def __init__(self, error: Exception|None, message:Message|None):
+  def __init__(self, error: Exception, message: Message):
     self.error = error 
     self.message = message
 
@@ -41,7 +41,7 @@ class GPT:
       organization=config.openai_org,
     )
   
-  def chat(self, messages:List[Message], model='gpt-3.5-turbo') -> MessageResult:
+  def chat(self, messages: List[Message], model = 'gpt-3.5-turbo') -> MessageResult:
     try:
       completion = self.client.chat.completions.create(
         model=model,
