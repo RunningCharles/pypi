@@ -37,5 +37,8 @@ class GPOIClock:
     self.digs = ClockDigs()
     self.dig_pins = self.digs.__dict__.values()
 
+  def start(self):
+    self.display_digit(self.digs.one, Digit.six)
+
   def display_digit(self, dig: GPIOLed, digit: DigitValue):
     reset_leds(self.dig_pins, Level.HIGH)

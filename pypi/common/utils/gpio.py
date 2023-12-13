@@ -48,8 +48,11 @@
 
 from enum import Enum
 from typing import List
-from gpiozero import LED
+from gpiozero import (Device, LED)
+from gpiozero.pins.rpigpio import RPiGPIOFactory
 from .utils import utils
+
+Device.pin_factory = RPiGPIOFactory()
 
 class GPIOLevel(Enum):
   HIGH = True

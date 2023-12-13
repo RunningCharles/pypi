@@ -98,18 +98,18 @@ class Digit:
 
 class DigitLeds:
   def __init__(self):
-    self.a  = GPIOLed(LedPin.a)
-    self.b  = GPIOLed(LedPin.b)
-    self.c  = GPIOLed(LedPin.c)
-    self.d  = GPIOLed(LedPin.d)
-    self.e  = GPIOLed(LedPin.e)
-    self.f  = GPIOLed(LedPin.f)
-    self.g  = GPIOLed(LedPin.g)
-    self.dp = GPIOLed(LedPin.dp)
+    self.a  = GPIOLed(LedPin.a.value)
+    self.b  = GPIOLed(LedPin.a.value)
+    self.c  = GPIOLed(LedPin.c.value)
+    self.d  = GPIOLed(LedPin.d.value)
+    self.e  = GPIOLed(LedPin.e.value)
+    self.f  = GPIOLed(LedPin.f.value)
+    self.g  = GPIOLed(LedPin.g.value)
+    self.dp = GPIOLed(LedPin.dp.value)
 
 class ClockDigs:
   def __init__(self):
-    self.one    = GPIOLed(DigPin.one)
-    self.two    = GPIOLed(DigPin.two)
-    self.three  = GPIOLed(DigPin.three)
-    self.four   = GPIOLed(DigPin.four)
+    self.one    = GPIOLed(DigPin.one.value)
+    self.two    = GPIOLed(DigPin.two.value)
+    self.three  = GPIOLed(DigPin.three.value)
+    self.four   = GPIOLed(DigPin.four.value)

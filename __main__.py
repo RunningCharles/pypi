@@ -30,7 +30,7 @@ def main():
   # logger.info('error: %s',str(result.error))
   # logger.info('message: %s', result.message)
   clock = GPOIClock()
-  logger.info('clock: %s', str(clock.digs.__dict__.values()))
+  clock.start();
 
 if __name__ == '__main__':
   main()
