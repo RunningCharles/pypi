@@ -17,13 +17,25 @@
 #          ┃ ┫ ┫   ┃ ┫ ┫
 #          ┗━┻━┛   ┗━┻━┛
 #
-#  Created by CharlesChen on 2023/12/12.
+#  Created by CharlesChen on 2023/12/13.
 
-from .common import (
-  gpt as gpt,
-  utils as utils,
-  logger as logger,
-  config as config,
+from ..common import (
+  GPIOLevel as Level,
+  GPIOLed,
+  reset_leds,
+)
+from .defines import (
+  Digit,
+  DigitLeds,
+  ClockDigs,
+  DigitValue,
 )
 
-from .clock import GPOIClock as GPOIClock 
+class GPOIClock:
+  def __init__(self):
+    self.leds = DigitLeds()
+    self.digs = ClockDigs()
+    self.dig_pins = self.digs.__dict__.values()
+
+  def display_digit(self, dig: GPIOLed, digit: DigitValue):
+    reset_leds(self.dig_pins, Level.HIGH)

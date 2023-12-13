@@ -19,11 +19,13 @@
 #
 #  Created by CharlesChen on 2023/12/12.
 
-from .common import (
-  gpt as gpt,
-  utils as utils,
-  logger as logger,
-  config as config,
-)
+import socket
 
-from .clock import GPOIClock as GPOIClock 
+class Utils:
+  def __init__(self):
+    self.hostname = socket.gethostname()
+
+  def is_pi(self) -> bool:
+    return self.hostname == 'pi'
+
+utils = Utils()
