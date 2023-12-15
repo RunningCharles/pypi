@@ -1,29 +1,24 @@
-#### 1. 安装虚拟环境依赖包
+#### 1. 安装 Python
 ``` shell
-$ pip3 install virtualenv
+./configure --prefix=/usr/local/python3.12 --enable-optimizations --with-ssl
+make
+sudo make install
+ln -s /usr/local/python3.12/bin/python3 /usr/bin/python3
+ln -s /usr/local/python3.12/bin/pip3 /usr/bin/pip3
 ```
 
-#### 2. 创建项目虚拟环境
+#### 2. Python 虚拟环境
 ``` shell
-$ virtualenv venv
-```
-
-#### 3. 启动虚拟环境
-``` shell
-$ source venv/bin/activate
-```
-
-#### 4. 退出虚拟环境
-``` shell
-$ deactivate
-```
-
-#### 5. 存储依赖环境
-``` shell
+pip3 install virtualenv
+virtualenv venv
+source venv/bin/activate
+deactivate
 pip freeze > requirements.txt
+pip install -r requirements.txt
 ```
 
-#### 5. 安装依赖环境
-``` shell
-pip install -r requirements.txt
+#### 3. 安装蓝牙库
+```
+LDFLAGS="-lm" pip install dbus-python
+pip install bluezero
 ```
