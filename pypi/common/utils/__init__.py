@@ -21,6 +21,7 @@
 
 from .gpt import gpt as gpt
 from .utils import utils as utils
+from .bluetooth import bluetooth as bluetooth
 from .gpio import (
   GPIOLevel as GPIOLevel,
   GPIOLed as GPIOLed,

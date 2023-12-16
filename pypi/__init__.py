@@ -24,6 +24,7 @@ from .common import (
   utils as utils,
   logger as logger,
   config as config,
+  bluetooth as bluetooth,
 )
 
 from .clock import GPOIClock as GPOIClock 

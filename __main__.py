@@ -19,10 +19,13 @@
 #
 #  Created by CharlesChen on 2023/12/12.
 
+from bluezero import adapter
+
 from pypi import (
   logger,
   gpt,
   GPOIClock,
+  bluetooth,
 )
 
 def main():
@@ -33,6 +36,7 @@ def main():
 
   # clock = GPOIClock()
   # clock.start();
+
   pass
 
 if __name__ == '__main__':

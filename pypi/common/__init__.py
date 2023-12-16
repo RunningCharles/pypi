@@ -24,6 +24,7 @@ from .config import config as config
 from .utils import (
   gpt as gpt,
   utils as utils,
+  bluetooth as bluetooth,
   GPIOLevel as GPIOLevel,
   GPIOLed as GPIOLed,
   reset_leds as reset_leds,
