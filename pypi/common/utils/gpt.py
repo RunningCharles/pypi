@@ -19,15 +19,18 @@
 #
 #  Created by CharlesChen on 2023/12/12.
 
+
+import os
+import requests
 from typing import List
 from ..config import config
-from openai import OpenAI
+
+k_host = "http://43.157.39.4:7001"
 
 class Message: 
   def __init__(self, role:str, content:str):
     self.role = role
     self.content = content
-
 
 class MessageResult:
   def __init__(self, error: Exception, message: Message):
@@ -35,20 +38,34 @@ class MessageResult:
     self.message = message
 
 class GPT:
-  def __init__(self):
-    self.client = OpenAI(
-      api_key=config.openai_api_key,
-      organization=config.openai_org,
-    )
-  
-  def chat(self, messages: List[Message], model = 'gpt-3.5-turbo') -> MessageResult:
-    try:
-      completion = self.client.chat.completions.create(
-        model=model,
-        messages=messages,
-      )
-      return MessageResult(None, completion.choices[0].message)
-    except Exception as error:
-      return MessageResult(error, None)
+  def chat(self):
+    data = {
+      "model": "gpt-3.5-turbo",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant."
+        },
+        {
+          "role": "user",
+          "content": "Hello!"
+        }
+      ]
+    }
+    rsp = self.post('gpt/chat', data=data)
+    print('rsp:', str(rsp))
+    pass
+
+  def post(self, spath: str, data: dict[str, any]):
+    headers = {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + config.openai_api_key
+    } 
+    url = os.path.join(k_host, spath)
+    print("url: ", url)
+    print("headers: ", headers)
+    print("data: ", str(data))
+    response = requests.post(url, data=data, headers=headers)
+    return response
 
 gpt = GPT()

@@ -25,8 +25,8 @@ import os
 class Config():
   def __init__(self):
     load_dotenv()
-    self.name = 'config'
-    self.openai_api_key = os.getenv('OPENAI_API_KEY')
-    self.openai_org = os.getenv('OPENAI_ORG')
+    self.name = "config"
+    self.openai_api_key = os.getenv("OPENAI_API_KEY")
+    self.openai_org = os.getenv("OPENAI_ORG")
 
 config = Config()

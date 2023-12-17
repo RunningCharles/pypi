@@ -29,15 +29,14 @@ from pypi import (
 )
 
 def main():
-  logger.info('main')
-  # result = gpt.chat([{"role": "user", "content": "Hello!"}])
-  # logger.info('error: %s',str(result.error))
-  # logger.info('message: %s', result.message)
+  logger.info("main")
+  result = gpt.chat()
+  logger.info("result: %s", str(result))
 
   # clock = GPOIClock()
   # clock.start();
 
   pass
 
-if __name__ == '__main__':
+if __name__ == "__main__":
   main()

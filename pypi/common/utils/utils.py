@@ -26,6 +26,6 @@ class Utils:
     self.hostname = socket.gethostname()
 
   def is_pi(self) -> bool:
-    return self.hostname == 'pi'
+    return self.hostname == "pi"
 
 utils = Utils()
