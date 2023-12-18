@@ -62,10 +62,7 @@ class GPT:
       "Authorization": "Bearer " + config.openai_api_key
     } 
     url = os.path.join(k_host, spath)
-    print("url: ", url)
-    print("headers: ", headers)
-    print("data: ", str(data))
-    response = requests.post(url, data=data, headers=headers)
-    return response
+    rsp = requests.post(url=url, headers=headers, json=data)
+    return rsp.json()
 
 gpt = GPT()
