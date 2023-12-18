@@ -22,9 +22,11 @@
 from .logger import logger as logger
 from .config import config as config
 from .utils import (
-  gpt as gpt,
   utils as utils,
   bluetooth as bluetooth,
+  gpt as gpt,
+  Role as Role,
+  Message as Message,
   GPIOLevel as GPIOLevel,
   GPIOLed as GPIOLed,
   reset_leds as reset_leds,

@@ -24,14 +24,17 @@ from bluezero import adapter
 from pypi import (
   logger,
   gpt,
+  Role,
+  Message,
   GPOIClock,
   bluetooth,
 )
 
 def main():
   logger.info("main")
-  result = gpt.chat()
-  logger.info("result: %s", str(result))
+  result = gpt.chat([Message(Role.user.value, 'Hello!')])
+  logger.info("message: %s: %s", result.message.role, result.message.content)
+  logger.info("exception: %s", str(result.exception))
 
   # clock = GPOIClock()
   # clock.start();
