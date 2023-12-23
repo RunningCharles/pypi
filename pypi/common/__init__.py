@@ -23,7 +23,6 @@ from .logger import logger as logger
 from .config import config as config
 from .utils import (
   utils as utils,
-  bluetooth as bluetooth,
   gpt as gpt,
   Role as Role,
   Message as Message,

@@ -23,9 +23,3 @@ deactivate
 pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
-
-#### 3. 安装蓝牙库
-```
-LDFLAGS="-lm" pip install dbus-python
-pip install bluezero
-```

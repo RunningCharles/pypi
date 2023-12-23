@@ -19,15 +19,12 @@
 #
 #  Created by CharlesChen on 2023/12/12.
 
-from bluezero import adapter
-
 from pypi import (
   logger,
   gpt,
   Role,
   Message,
   GPOIClock,
-  bluetooth,
 )
 
 def main():

@@ -23,7 +23,6 @@ from .common import (
   utils as utils,
   logger as logger,
   config as config,
-  bluetooth as bluetooth,
   gpt as gpt,
   Role as Role,
   Message as Message,
