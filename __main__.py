@@ -30,8 +30,10 @@ from pypi import (
 def main():
   logger.info("main")
   result = gpt.chat([Message(Role.user.value, 'Hello!')])
-  logger.info("message: %s: %s", result.message.role, result.message.content)
-  logger.info("exception: %s", str(result.exception))
+  if (result.message != None):
+    logger.info("message: %s: %s", result.message.role, result.message.content)
+  else:
+    logger.info("exception: %s", str(result.exception))
 
   # clock = GPOIClock()
   # clock.start();
